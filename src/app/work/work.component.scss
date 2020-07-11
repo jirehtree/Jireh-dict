@@ -1,0 +1,282 @@
+@font-face {
+  font-family: "Libre Barcode 39 Extended";
+  src: url("../../assets/font/LibreBarcode39Extended-Regular.ttf");
+}
+@font-face {
+  font-family: "Poiret One";
+  src: url("../../assets/font/PoiretOne-Regular.ttf");
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/font/Poppins-ExtraLight.ttf");
+}
+
+.container-fluid {
+  background-color: #ff7271;
+  min-height: 70vh;
+  width: 93vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navitems {
+  margin-top: 5 vh;
+}
+
+.navitems ul li {
+  margin: 0px 0.5em 1.5em;
+}
+
+.navitems ul li a {
+  position: relative;
+  color: black;
+  font-size: 18px;
+  letter-spacing: 7px;
+  font-family: "Poppins", sans-serif;
+  padding: 16px 0 5px;
+  margin: 0 25px;
+}
+
+.navitems ul li a:hover {
+  color: #ff7271;
+  transition: 0.9s;
+}
+
+.navitems ul li a:after {
+  content: "";
+  position: absolute;
+  left: 46%;
+  bottom: 0;
+  transform: translateX(-50%) scaleX(0);
+  -webkit-transform: translateX(-50%) scaleX(0);
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  width: 100%;
+  height: 1px;
+  background-color: #ff7271;
+  -webkit-transition: transform 400ms;
+  transition: transform 400ms;
+}
+
+.navitems ul li a:hover:after {
+  -webkit-transform: translateX(-50%) scaleX(1);
+  transform: translateX(-50%) scaleX(1);
+}
+
+.navitems ul li a.active {
+  color: #ff7271;
+}
+
+.text-center h2 {
+  color: #ff7271;
+  font-size: 5em;
+  font-family: "Libre Barcode 39 Extended", cursive;
+  height: 100px;
+  margin-top: 5vh;
+  position: relative;
+  overflow: hidden;
+}
+.text-center h2 a {
+  color: #ff7271;
+  text-decoration: none;
+}
+
+h2 span {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+}
+
+h2:hover span {
+  animation: shuffle steps(4) 1s infinite;
+}
+
+@keyframes shuffle {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-400px);
+  }
+}
+
+.text-center h1 {
+  font-family: "Poiret One", cursive;
+  font-size: 5em;
+  padding-top: 2em;
+  color: #fff;
+  letter-spacing: 5px;
+}
+
+.fontawe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fontawe ul {
+  padding: 10px 0 0 0;
+  display: flex;
+}
+
+.fontawe ul li {
+  list-style: none;
+  margin-top: 0 5px;
+}
+.fontawe ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ff7271;
+  transition: 0.5s;
+}
+.fontawe ul li a:hover {
+  color: #fff;
+}
+
+.fontawe ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ff7271;
+  z-index: -1;
+  transform: scale(0);
+  transition: 0.5s;
+}
+
+.fontawe ul li a:hover:before {
+  transform: scale(1);
+}
+a.active {
+  color: white;
+}
+
+.parent-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #16384c;
+}
+
+.child-container {
+  position: relative;
+  width: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px;
+}
+
+.child-container .card {
+  position: relative;
+  max-width: 300px;
+  height: 215px;
+  background: #fff;
+  margin: 30px 10px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+
+  transition: 0.3s ease-in-out;
+}
+
+.child-container .card:hover {
+  height: 420px;
+}
+
+.child-container .card .imgBox {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  top: -60px;
+  left: 5px;
+  z-index: 1;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.child-container .card .imgBox img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.child-container .card .content {
+  position: relative;
+  margin-top: -140px;
+  padding: 10px 15px;
+  text-align: center;
+  color: #111;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.child-container .card:hover .content {
+  visibility: visible;
+  opacity: 1;
+  margin-top: -40px;
+  transition-delay: 0.3s;
+  font-family: "Poppins", sans-serif;
+}
+
+.content {
+  font-family: "Poppins", sans-serif;
+}
+.content h2 a {
+  color: #420101;
+}
+
+.imgBox {
+  animation-name: keep;
+  animation-duration: 2s;
+}
+
+@keyframes keep {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .navitems ul li a {
+    color: black;
+    font-size: 14px;
+    letter-spacing: 7px;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .navitems ul li {
+    margin: 0px 0.5em 1em;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .navitems ul li a {
+    color: black;
+    font-size: 12px;
+    letter-spacing: 7px;
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .navitems ul li a {
+    color: black;
+    font-size: 10px;
+    letter-spacing: 7px;
+    font-family: "Poppins", sans-serif;
+  }
+}

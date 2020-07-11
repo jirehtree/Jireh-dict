@@ -1,0 +1,381 @@
+@font-face {
+  font-family: "Libre Barcode 39 Extended";
+  src: url("../../assets/font/LibreBarcode39Extended-Regular.ttf");
+}
+@font-face {
+  font-family: "Poiret One";
+  src: url("../../assets/font/PoiretOne-Regular.ttf");
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/font/Poppins-ExtraLight.ttf");
+}
+
+.container-fluid {
+  background-color: #ff7271;
+  min-height: 70vh;
+  width: 93vw;
+}
+
+.navitems {
+  margin-top: 5 vh;
+}
+
+.navitems ul li {
+  margin: 0px 0.5em 1.5em;
+}
+
+.navitems ul li a {
+  position: relative;
+  color: black;
+  font-size: 18px;
+  letter-spacing: 7px;
+  font-family: "Poppins", sans-serif;
+  padding: 16px 0 5px;
+  margin: 0 25px;
+}
+
+.navitems ul li a:hover {
+  color: #ff7271;
+  transition: 0.9s;
+}
+
+.navitems ul li a:after {
+  content: "";
+  position: absolute;
+  left: 46%;
+  bottom: 0;
+  transform: translateX(-50%) scaleX(0);
+  -webkit-transform: translateX(-50%) scaleX(0);
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  width: 100%;
+  height: 1px;
+  background-color: #ff7271;
+  -webkit-transition: transform 400ms;
+  transition: transform 400ms;
+}
+
+.navitems ul li a:hover:after {
+  -webkit-transform: translateX(-50%) scaleX(1);
+  transform: translateX(-50%) scaleX(1);
+}
+
+.text-center h2 {
+  color: #ff7271;
+  font-size: 5em;
+  font-family: "Libre Barcode 39 Extended", cursive;
+  height: 100px;
+  margin-top: 5vh;
+  position: relative;
+  overflow: hidden;
+}
+.text-center h2 a {
+  color: #ff7271;
+  text-decoration: none;
+}
+
+h2 span {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+}
+
+h2:hover span {
+  animation: shuffle steps(4) 1s infinite;
+}
+
+@keyframes shuffle {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-400px);
+  }
+}
+
+h1 {
+  font-family: "Poiret One", cursive;
+  font-size: 5em;
+  padding-top: 2em;
+  color: #fff;
+  letter-spacing: 5px;
+}
+
+.fontawe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fontawe ul {
+  padding: 10px 0 0 0;
+  display: flex;
+}
+
+.fontawe ul li {
+  list-style: none;
+  margin-top: 0 5px;
+}
+.fontawe ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ff7271;
+  transition: 0.5s;
+}
+.fontawe ul li a:hover {
+  color: #fff;
+}
+
+.fontawe ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ff7271;
+  border-radius: 50%;
+  z-index: -1;
+  transform: scale(0);
+  transition: 0.5s;
+}
+
+.fontawe ul li a:hover:before {
+  transform: scale(1);
+}
+
+.box-item {
+  font-family: "Poiret One", cursive;
+  font-size: 100px;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  color: #fff;
+  letter-spacing: 5px;
+  animation-name: keep;
+  animation-duration: 2s;
+}
+
+.box-item:hover {
+  font-size: 0;
+}
+
+.box-item:hover:after {
+  content: attr(data);
+  font-size: 100px;
+  @keyframes keep {
+    from {
+      transform: translateY(50px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+}
+
+.anim-typewriter {
+  animation: typewriter 4s steps(40) 1s 1 normal both,
+    blinkTextCursor 500ms steps(40) infinite normal;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 11em;
+  }
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(0, 0, 0, 0.75);
+  }
+
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.line {
+  margin: 0 auto;
+  border-right: 2px solid rgba(0, 0, 0, 0.75);
+  font-size: 50px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+  font-family: "Poiret One", cursive;
+}
+
+@media only screen and (max-width: 770px) {
+  .line {
+    margin: 0 auto;
+    border-right: 2px solid rgba(0, 0, 0, 0.75);
+    font-size: 40px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+    font-family: "Poiret One", cursive;
+  }
+
+  .box-item {
+    font-family: "Poiret One", cursive;
+    font-size: 90px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    color: #fff;
+    letter-spacing: 5px;
+  }
+  .box-item:hover:after {
+    content: attr(data);
+    font-size: 90px;
+    @keyframes keep {
+      from {
+        transform: translateY(50px);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .line {
+    margin: 0 auto;
+    border-right: 2px solid rgba(0, 0, 0, 0.75);
+    font-size: 30px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+    font-family: "Poiret One", cursive;
+  }
+
+  .box-item {
+    font-family: "Poiret One", cursive;
+    font-size: 80px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    color: #fff;
+    letter-spacing: 5px;
+  }
+
+  .box-item:hover:after {
+    content: attr(data);
+    font-size: 80px;
+    @keyframes keep {
+      from {
+        transform: translateY(50px);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .navitems ul li a {
+    color: black;
+    font-size: 14px;
+    letter-spacing: 7px;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .navitems ul li {
+    margin: 0px 0.5em 1em;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .line {
+    margin: 0 auto;
+    border-right: 2px solid rgba(0, 0, 0, 0.75);
+    font-size: 25px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+    font-family: "Poiret One", cursive;
+  }
+
+  .box-item {
+    font-family: "Poiret One", cursive;
+    font-size: 60px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    color: #fff;
+    letter-spacing: 5px;
+  }
+
+  .box-item:hover:after {
+    content: attr(data);
+    font-size: 600px;
+    @keyframes keep {
+      from {
+        transform: translateY(50px);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .navitems ul li a {
+    color: black;
+    font-size: 12px;
+    letter-spacing: 7px;
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .line {
+    margin: 0 auto;
+    border-right: 2px solid rgba(0, 0, 0, 0.75);
+    font-size: 20px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+    font-family: "Poiret One", cursive;
+  }
+
+  .box-item {
+    font-family: "Poiret One", cursive;
+    font-size: 50px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    color: #fff;
+    letter-spacing: 5px;
+  }
+
+  .box-item:hover:after {
+    content: attr(data);
+    font-size: 50px;
+    @keyframes keep {
+      from {
+        transform: translateY(50px);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .navitems ul li a {
+    color: black;
+    font-size: 10px;
+    letter-spacing: 7px;
+    font-family: "Poppins", sans-serif;
+  }
+}

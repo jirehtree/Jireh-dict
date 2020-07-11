@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "jireh-4a6d3": {
+      "hosting": {
+        "Jireh": [
+          "jireh-4a6d3"
+        ]
+      }
+    }
+  }
+}
